@@ -1,0 +1,138 @@
+@charset "UFT-8";
+
+:root {
+  --blue: #00B8E4;
+  --font: #fff;
+  --font2: #B0BDCA;
+  --black: #090B13;
+  --blackOpacity: #0F1214;
+  --whats: #4AA833;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  outline: none;
+  -webkit-font-animation: antialiased; /*deixando a fonte mais sauve*/
+}
+
+html, body{
+  width: 100%; /*para que tenha uma largura de no maximo 100%*/
+  overflow-x: hidden; /*para que não tenha uma barra de rolagem da horizontal*/
+  /* overflow-y: hidden;  para que não tenha barra de rolagem na vertical */
+}
+
+
+/*  */
+
+
+.grid-container{
+  width: 100%;
+  height: 500px;
+  background-image: url('../img/fundo.png');
+  background-position: left top;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-color: #222;
+  width: 100%;
+  height: 850px;
+}
+
+.grid-container .menu{
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.grid-container .first{
+  display: flex;
+  padding: 0px 40px 0px 95px ;
+  margin-left:10px
+}
+
+nav{
+  margin-left: 30px ;
+}
+
+.grid-container .logo{
+  padding-right: 50px;
+  padding-top: 40px;
+}
+
+
+
+.menu-status #first{ 
+  margin-right: 40px;
+}
+
+
+
+
+ul{
+  list-style: none;
+}
+
+
+
+.menu-status{
+  display: flex;
+  align-items: center;
+}
+
+.menu-status a{
+  color: #fff;
+  text-decoration: none;
+
+}
+
+.menu-status .menu-box{
+  padding: 10px 5px;
+  background-color: #452BC7;
+  border-radius: 50px;
+}
+
+.menu-status .menu-box p{
+  color: #fff;
+  margin: 3px 20px;
+  align-items: center;
+  justify-content: center;
+}
+
+
+
+
+
+.menu ul{
+  display: flex;
+  flex-wrap: wrap; /*para que os itens quebre caso não tenha espaço*/
+}
+
+.menu ul li a{
+  display: block;
+  padding: 10px;
+  margin-right: 10px;
+  color: #222;
+  text-decoration: none;
+  font-weight: bold;
+  text-transform: uppercase; /*Deixando todas as letras em maiúsculo*/
+  font-size: 0.875rem;
+  letter-spacing: .1em;
+}
+
+.grid-container .me{
+  display: grid;
+  padding: 100px 100px 100px 320px;
+}
+
+
+
+
+.grid-container-about{
+  background-color: #FDFDFD;
+  color: #222;
+  display: inline-block;
+  align-items: center;
+  justify-content: center;
+}
+
