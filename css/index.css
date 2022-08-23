@@ -6,133 +6,555 @@
   --font2: #B0BDCA;
   --black: #090B13;
   --blackOpacity: #0F1214;
-  --whats: #4AA833;
+  --whatsApp: #4AA833;
+  --html: #FF6F07;
+  --css: #0085FF;
+  --javaScript: #EFD808;
+  --react : #00FFF0;
 }
 
 * {
   padding: 0;
   margin: 0;
-  box-sizing: border-box;
+  box-sizing: border-box; /* Para em textos grandes o conteúdo respeite o tamanho da box, assim quando definido uma box de 300px, ele não somre os 300px + op tamanho do conteúdo, e sim a box + o conúdo tenham no maximo juntos 300px */
   outline: none;
   -webkit-font-animation: antialiased; /*deixando a fonte mais sauve*/
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
 }
 
 html, body{
   width: 100%; /*para que tenha uma largura de no maximo 100%*/
   overflow-x: hidden; /*para que não tenha uma barra de rolagem da horizontal*/
   /* overflow-y: hidden;  para que não tenha barra de rolagem na vertical */
+
 }
 
 
 /*  */
+header {
+  background: var(--black);
+  width: 100vw;
+  height: 100vh;
+}
 
-
-.grid-container{
-  width: 100%;
-  height: 500px;
+/* Imagem de fundo */
+.menu-container {
   background-image: url('../img/fundo.png');
   background-position: left top;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
+  /* background-repeat: no-repeat; */
+  background-size: cover;
+  background-attachment: scroll;
   background-color: #222;
+}
+
+
+
+
+.menu-container .menu {
+  max-width: 1250px;
+  padding: 15px 0;
+  margin: 0 auto;
+  display: flex; /* Deixando um container ao lado do outro, assim os itens do nav ainda são display 'block', apenas o "nav" é display flex*/
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center; /* Alinhando os itens ao centro */
+}
+
+/* MENU LOGO */
+
+.menu-text {
+  display: flex;
+  align-items: center;
+}
+
+.menu-text .logo a{
+  color: #FFF;
+  padding: 0px 20px;
+  font-size: 1.25em; 
+}
+
+.logo img {
   width: 100%;
-  height: 850px;
 }
 
-.grid-container .menu{
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
+.menu-text .status {
+  background-color: var(--blue);
+  color: #FFF;
+  margin-left: 10px;
+  padding: 5px 10px;
+  border-radius: 25px;
+  font-size: 1.25em; 
 }
 
-.grid-container .first{
-  display: flex;
-  padding: 0px 40px 0px 95px ;
-  margin-left:10px
-}
 
-nav{
-  margin-left: 30px ;
-}
 
-.grid-container .logo{
+
+/* NAV */
+
+.menu-nav {
   padding-right: 50px;
-  padding-top: 40px;
+}
+
+.menu-nav ul{
+  display: flex; /* Para tornar os itens dentro do ul (lista) flexiveis*/
+  flex-wrap: wrap;
+}
+
+
+.menu-nav li + li{
+  margin-left: 25px;
+}
+
+.menu-nav a{
+  color: #FFF;
+  font-size: 1.25em; /* Sendo 'em' uma medida que é dividida por 16 em relação a outra medida que seja 'px'*/
 }
 
 
 
-.menu-status #first{ 
-  margin-right: 40px;
+
+/* DESCRIÇÃO */
+
+.decricao-me {
+  position: absolute;
+  top: 50%;
+  left: 20%;
+
+  color: #FFF;
+}
+
+.decricao-me h1 {
+  font-size: 2.6em;
+}
+
+.decricao-me p {
+  font-size: 2em;
+  color: rgba(255, 255, 255, 0.5)
+}
+
+
+.arrow {
+  color: #FFF;
+  position: absolute;
+  /* top: 90%; */
+  left: 50%;
+  animation: arrow .5s ease-in 0s infinite alternate; /* colocando a animação, o nome dela; o tempo; a velociadade, sendo ela começando mais rápido e ficando mais lenta; 0s quer dizer que ele não irá esperar tempo nenhum para começar; "alternate" quer dizer que ele vai do 30 para o 20 e depois volta do 20 para o 30*/
+  
+}
+
+@keyframes arrow {
+  from {
+    bottom: 50px;
+  }
+  to {
+    bottom: 30px;
+  }
 }
 
 
 
-
-ul{
-  list-style: none;
+/* SOBRE */
+.container-sobre {
+  background: var(--black);
+  height: auto;
 }
 
+.content-width {
+  max-width: 1250px;
+  height: auto;
+  margin: 0 auto;
+  padding: 0 0 80px 0;
+  position: relative;
+  box-sizing: border-box;
+}
 
+.about {
+  width: 100%;
+  height: auto;
+  text-align: center;
+  position: relative;
+  box-sizing: border-box;
+  vertical-align: baseline;
+  margin-bottom: 45px;
+}
 
-.menu-status{
+.number-wrap {
   display: flex;
-  align-items: center;
-}
-
-.menu-status a{
-  color: #fff;
-  text-decoration: none;
-
-}
-
-.menu-status .menu-box{
-  padding: 10px 5px;
-  background-color: #452BC7;
-  border-radius: 50px;
-}
-
-.menu-status .menu-box p{
-  color: #fff;
-  margin: 3px 20px;
-  align-items: center;
+  width: 140px;
+  height: 80px;
+  margin: 0 auto 10px auto;
+  background: var(--blue);
   justify-content: center;
+  align-items: center;
 }
 
-
-
-
-
-.menu ul{
-  display: flex;
-  flex-wrap: wrap; /*para que os itens quebre caso não tenha espaço*/
+.title{
+  background: transparent;
 }
 
-.menu ul li a{
-  display: block;
-  padding: 10px;
-  margin-right: 10px;
-  color: #222;
-  text-decoration: none;
+.number-wrap span,.title span {
+  color: #FFF;
+  font-size: 40px;
   font-weight: bold;
-  text-transform: uppercase; /*Deixando todas as letras em maiúsculo*/
-  font-size: 0.875rem;
-  letter-spacing: .1em;
-}
-
-.grid-container .me{
-  display: grid;
-  padding: 100px 100px 100px 320px;
-}
-
-
-
-
-.grid-container-about{
-  background-color: #FDFDFD;
-  color: #222;
   display: inline-block;
+  font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial;
+}
+
+
+
+.conteudo {
+  display: block;
+}
+
+.conteudo h1 {
+  display: flex;
+  color: #FFF;
+  margin: 0 auto 40px auto;
+  justify-content: center;
+  font-size: 35px;
+}
+
+.conteudo p {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 auto;
+  justify-content: center;
+  color: #FFF;
+  text-align: center;
+  width: 350px;
+}
+
+.container-sobre .btn {
+  display: flex;
+  padding: 10px 15px;
+  
+  margin: 20px auto 0 auto;
   align-items: center;
+  justify-content:center;
+
+  cursor: pointer;
+  font-size: .8em;
+  font-weight: bold;
+  color: #FFF;
+  background: var(--blue);
+}
+
+.container-sobre .btn:hover {
+  background: transparent;
+  border: 2px solid #FFF;
+  transition:.4s;
+}
+
+
+
+
+/* PORTIFÓLIO */
+.container-portfolio {
+  background: var(--blackOpacity);
+  color: #FFF;
+}
+
+.projetos-grid {
+  margin-top: 100px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  justify-items: center;
+}
+
+.project {
+  padding: 20px 40px;
   justify-content: center;
 }
 
+.project-img {
+  max-width: 300px;
+}
+
+.project-img img {
+  width: 100%;
+  height: 100%;
+}
+
+.project-text {
+  margin-top: 15px;
+}
+
+.project-text p{
+  display: flex;
+  justify-content: center;
+  /* align-content: center; */
+}
+
+.project-text p:nth-child(1) {
+  font-size: 25px;
+  font-weight: bold;
+}
+
+.project-text p:nth-child(2) {
+  font-size: 23px;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.container-width .dribble {
+  display: flex;
+  justify-content: center;
+}
+
+.dribble a {
+  padding: 20px 25px;
+  margin: 40px auto 80px auto;
+
+  cursor: pointer;
+  border: 2px solid var(--blue);
+  font-size: 1.2em;
+  color: var(--blue);
+}
+
+.dribble a:hover {
+  color: #FFF;
+  background: var(--blue);
+  transition: .4s
+}
+
+
+/* SKRILL */
+.container-skrills {
+  background: var(--black)
+}
+
+.skrills .about {
+  margin-bottom: 90px;
+}
+
+.skrill-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas: 
+  "text abilidades"
+  "aperfeicoando aperfeicoando"
+  ;
+  justify-items: center;
+  align-content: center;
+}
+
+
+
+
+.text {
+  color: #FFF;
+  grid-area: text;
+  max-width: 450px;
+  margin: 0 40px;
+  font-size: 18px;
+}
+
+
+.skrill-content p::before {
+  content: '';
+  display: inline-block;
+  height: 12px;
+  width: 40px;
+  margin-right: 10px;
+  background: var(--blue);
+}
+
+.abilidades {
+  color: #FFF;
+  grid-area: abilidades;
+  width: 600px;
+  align-items: start;
+  margin: 0 40px;
+}
+
+.abilidades footer {
+  height: 2px;
+  background: var(--blackOpacity);
+  
+}
+
+.abilidades h4 {
+  font-size: 24px;
+}
+
+.abilidades .html {
+  height: 2px;
+  max-width: 90%;
+  background: var(--html);
+}
+
+.abilidades .css {
+  height: 2px;
+  max-width: 75%;
+  background: var(--css);
+}
+
+.abilidades .js {
+  height: 2px;
+  max-width: 60%;
+  background: var(--javaScript);
+}
+
+.abilidades .react {
+  height: 2px;
+  max-width: 15%;
+  background: var(--react);
+}
+.abilidades h4 {
+  margin-bottom: 5px;
+}
+
+.abilidades .space {
+  margin-top: 15px;
+}
+
+
+
+
+.aperfeicoando {
+  grid-area: aperfeicoando;
+  /* margin-top: 40px; */
+  /* align-items: center; */
+  /* justify-items: center; */
+
+  width: 100%;
+  margin: 60px auto 60px auto;
+}
+
+.aperfeicoando .text{
+  display: flex;
+  
+  margin: 0 auto 20px auto;
+  justify-content: center;
+  font-size: 30px; 
+}
+
+.tecnologias {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.tec-item {
+  display: flex;
+  min-width: 180px;
+  height: auto;
+  background: #FFF;
+  align-items: center;
+  justify-content: center;
+
+}
+
+.tec-item {
+  margin: 0 10px;
+  padding: 10px 20px;
+  background: rgba(0, 0, 0, 1);
+}
+
+
+
+
+
+/* CONTATO */
+.container-contato {
+  background: var(--blackOpacity);
+}
+
+.content-contato {
+  display: flex;
+  
+}
+
+.informacoes {
+  max-width: 400px;
+  margin: 0px auto 60px auto;
+  padding-left: 20px;
+}
+
+.texto-especificacao p {
+  font-size: 16px;
+  color: #FFF;
+  margin-bottom: 15px;
+}
+
+.icons-informacoes p{
+  font-size: 16px;
+  color: #FFF;
+}
+
+
+
+.localizacao, .email, .telefone {
+  display: flex;
+}
+
+.icons-informacoes .space{
+  margin-top: 15px;
+}
+
+.icons-informacoes .imagem {
+  margin-right: 10px;
+}
+
+.imagem img{
+  width: 40px;
+  height: 40px;
+}
+
+.telefone a {
+  text-decoration: none;
+  color: #FFF;
+}
+
+
+
+/* form */
+.conteiner-forms {
+  max-width: 400px;
+  margin: 0px auto 60px auto;
+  padding-right: 20px;
+}
+.formulario input::placeholder, textarea::placeholder {
+  color: rgba(255, 255, 255, 0.5);
+
+}
+
+.formulario input, textarea {
+  background: var(--blue);
+  border: none;
+  padding: 5px;
+  font-size: 15px;
+  width: 100%;
+}
+
+.formulario input + input, textarea{
+  margin-top: 5px;
+}
+
+.formulario button {
+  background: var(--blue);
+  border: none;
+  padding: 5px;
+  font-size: 15px;
+  color: rgba(255, 255, 255, 0.5);
+
+}
+
+
+
+
+
+
+
+
+
+
+
+/* FOOTER */
+.social-icons img {
+  max-width: 30px;
+}
