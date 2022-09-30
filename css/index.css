@@ -4,8 +4,8 @@
   --blue: #00B8E4;
   --font: #fff;
   --font2: #B0BDCA;
-  --black: #090B13;
-  --blackOpacity: #0F1214;
+  --black: #070C0E;
+  --blackOpacity: #0F1112;
   --whatsApp: #4AA833;
   --html: #FF6F07;
   --css: #0085FF;
@@ -20,6 +20,7 @@
   outline: none;
   -webkit-font-animation: antialiased; /*deixando a fonte mais sauve*/
   list-style: none;
+  font-family: Roboto,;
 }
 
 a {
@@ -93,6 +94,8 @@ header {
 
 
 
+
+
 /* NAV */
 
 .menu-nav {
@@ -105,13 +108,17 @@ header {
 }
 
 
-.menu-nav li + li{
-  margin-left: 25px;
-}
+
 
 .menu-nav a{
-  color: #FFF;
+  padding: 5px 10px;
+  color: rgba(255, 255, 255, 0.7);
   font-size: 1.25em; /* Sendo 'em' uma medida que é dividida por 16 em relação a outra medida que seja 'px'*/
+}
+
+.menu-nav a:hover{
+  color: rgba(255, 255, 255, 1);
+  transition: 0.2s;
 }
 
 
@@ -179,7 +186,7 @@ header {
   position: relative;
   box-sizing: border-box;
   vertical-align: baseline;
-  margin-bottom: 45px;
+  margin-bottom: 55px;
 }
 
 .number-wrap {
@@ -213,7 +220,7 @@ header {
 .conteudo h1 {
   display: flex;
   color: #FFF;
-  margin: 0 auto 40px auto;
+  margin: 0 auto 20px auto;
   justify-content: center;
   font-size: 35px;
 }
@@ -225,28 +232,31 @@ header {
   justify-content: center;
   color: #FFF;
   text-align: center;
-  width: 350px;
+  width: 450px;
+  color: rgba(255, 255, 255, 0.5)
 }
 
 .container-sobre .btn {
   display: flex;
-  padding: 10px 15px;
+  padding: 12px 20px;
   
-  margin: 20px auto 0 auto;
+  margin: 40px auto 0 auto;
   align-items: center;
   justify-content:center;
 
   cursor: pointer;
-  font-size: .8em;
-  font-weight: bold;
+  font-size: .9em;
   color: #FFF;
-  background: var(--blue);
+  background: transparent;
+
+  border-radius: 50px;
+  border: 2px solid #FFF;
 }
 
 .container-sobre .btn:hover {
-  background: transparent;
-  border: 2px solid #FFF;
+  background: var(--blue);
   transition:.4s;
+  border: 2px solid transparent;
 }
 
 
@@ -259,7 +269,6 @@ header {
 }
 
 .projetos-grid {
-  margin-top: 100px;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -306,19 +315,23 @@ header {
 }
 
 .dribble a {
-  padding: 20px 25px;
+  padding: 10px 25px;
   margin: 40px auto 80px auto;
 
   cursor: pointer;
-  border: 2px solid var(--blue);
+  border-radius: 50px;
   font-size: 1.2em;
-  color: var(--blue);
+  /* border: 2px solid var(--blue);
+  color: var(--blue); */
+  border: 2px solid #FFF;
+  color: #FFF;
+  background: transparent;
 }
 
 .dribble a:hover {
-  color: #FFF;
   background: var(--blue);
-  transition: .4s
+  transition:.4s;
+  border: 2px solid transparent;
 }
 
 
@@ -327,8 +340,12 @@ header {
   background: var(--black)
 }
 
+.skrills {
+  padding-bottom: 80px;
+}
+
 .skrills .about {
-  margin-bottom: 90px;
+  /* margin-bottom: 90px; */
 }
 
 .skrill-content {
@@ -345,10 +362,11 @@ header {
 
 
 
-.text {
+.skrill-content .text {
   color: #FFF;
   grid-area: text;
   max-width: 450px;
+  min-width: 400px;
   margin: 0 40px;
   font-size: 18px;
 }
@@ -452,7 +470,7 @@ header {
 .tec-item {
   margin: 0 10px;
   padding: 10px 20px;
-  background: rgba(0, 0, 0, 1);
+  background: #212121;
 }
 
 
@@ -478,7 +496,7 @@ header {
 .texto-especificacao p {
   font-size: 16px;
   color: #FFF;
-  margin-bottom: 15px;
+  margin-bottom: 25px;
 }
 
 .icons-informacoes p{
@@ -518,6 +536,7 @@ header {
   margin: 0px auto 60px auto;
   padding-right: 20px;
 }
+
 .formulario input::placeholder, textarea::placeholder {
   color: rgba(255, 255, 255, 0.5);
 
@@ -529,32 +548,77 @@ header {
   padding: 5px;
   font-size: 15px;
   width: 100%;
+  border-radius: 3px;
+  font-family: roboto;
 }
 
 .formulario input + input, textarea{
   margin-top: 5px;
 }
 
-.formulario button {
-  background: var(--blue);
+.button-container {
+  max-width: 400px;
+  display: flex;
+  justify-content: end;
+  border-radius: 3px;
+}
+
+.button-container button {
+  color: rgba(255, 255, 25 5, 0.5);
   border: none;
-  padding: 5px;
+  padding: 8px 12px;
   font-size: 15px;
-  color: rgba(255, 255, 255, 0.5);
+  color: rgba(255, 255, 255, 1);
+  background: transparent;
+  border-radius: 50px;
+  border: 2px solid #FFF;
+
+}
+
+.button-container button:hover {
+  background: var(--blue);
+  transition:.4s;
+  border: 2px solid transparent;
 
 }
 
 
 
-
-
-
-
-
-
-
-
 /* FOOTER */
+.footer {
+  max-height: 450px;
+  width: 100vw;
+  background: var(--blue);
+}
+
+.footer-content {
+  text-align: center;
+  padding: 65px 20px;
+  /* margin: 80px auto; */
+}
+
+.footer-content p:nth-child(1) {
+  font-size: 24px;
+  color: #FFF;
+  margin-bottom: 30px;
+}
+
 .social-icons img {
-  max-width: 30px;
+  max-width: 70px;
+}
+
+.social-icons img:nth-child(1) {
+  padding: 5px 15px;
+
+}
+
+.social-icons img + img {
+  margin-left: 20px;
+  padding: 5px 15px;
+}
+
+.footer-content .copy {
+  margin-top: 20px;
+  font-size: 20px;
+  color: #FFF;
 }
